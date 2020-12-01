@@ -8,5 +8,10 @@ namespace BankOO
     public class Statement
     {
         public IEnumerable<Transaction> Transactions { get; }
+
+        public Statement(IEnumerable<Transaction> transactions)
+        {
+            Transactions = transactions;
+        }
     }
 }
