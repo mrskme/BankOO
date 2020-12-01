@@ -6,9 +6,7 @@ namespace BankOO
 {
     public class Account
     {
-        public bool Balance { get; }
-        public List<Transaction> Transactions { get; }
-
+        public decimal Balance { get; }
 
         public void Deposit(decimal @decimal)
         {
