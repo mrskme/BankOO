@@ -8,19 +8,26 @@ namespace BankOO
     {
         public Customer CreateCustomer(string terje)
         {
-            throw new NotImplementedException();
+            return new Customer(terje);
         }
 
-        public Account CreateAccount(Customer customer, string brukskonto)
+        public Account CreateAccount(Customer customer, string accountName)
         {
-            throw new NotImplementedException();
+            return new Account(customer, accountName);
         }
 
-        public void Transfer(Customer customer, Account account1, Account account2, decimal @decimal)
+        public void Transfer(Customer customer, Account account1, Account account2, decimal amount)
         {
-            // vi sender med kunde. Hvis kunden ikke eier fra-konto => feil
-
-            throw new NotImplementedException();
+            if (account1._customer == customer)
+            {
+                if (account1.Balance >= amount)
+                {
+                    account1.Balance -= amount;
+                    account1.AddTransaction(amount);
+                    account2.Balance += amount;
+                    account2.AddTransaction(amount);
+                }
+            }
         }
     }
 }

@@ -6,6 +6,12 @@ namespace BankOO
 {
     public class Customer
     {
+        public string _name;
+
+        public Customer(string name)
+        {
+            _name = name;   
+        }
         public Statement GetLatestStatements()
         {
             var dateTime = DateTime.Now;
@@ -14,7 +20,7 @@ namespace BankOO
 
         public Statement GetStatements(int year, int month)
         {
-            throw new NotImplementedException();
+            return null;
         }
     }
 }
